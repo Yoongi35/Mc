@@ -1,0 +1,111 @@
+
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/IMG/FF.webp);
+}
+
+.logo-small {
+    width: 80px;
+    height: max-content;
+}
+
+.logo-container {
+    position: fixed;
+    top: -5px;
+    right: 95px;
+}
+
+.contenido {
+    padding: 20px;
+    text-align: center;
+}
+
+.titulo, .stitulo {
+    position: relative;
+    top: 50px;
+}
+
+.destacados {
+    display: flex;
+    justify-content: space-around;
+    padding: 20px;
+}
+
+.mascota {
+    width: 200px;
+    text-align: center;
+}
+
+.mascota img {
+    position: relative;
+    top: 5px;
+    width: 100%;
+    height: auto;
+    border-radius: 10px;
+}
+
+.l, .ls {
+    position: relative;
+    top: 10px;
+}
+
+footer {
+    background-color: #1f1e1e;
+    padding: 5px;
+    text-align: center;
+}
+
+.redes-sociales img {
+    width: 50px;
+    height: auto;
+    margin: 3px 50px; /
+}
+
+.redes-sociales a {
+    display: inline-block;
+}
+
+.w {
+    color: rgb(151, 183, 211);
+}
+
+@media (max-width: 600px) {
+    .logo-container {
+        right: 10px;
+    }
+
+    .mascota {
+        width: 150px;
+    }
+
+    .mascota img {
+        border-radius: 5px;
+    }
+
+    .destacados {
+        flex-direction: column;
+    }
+}
+
+@media (max-width: 900px) {
+    .mascota {
+        width: 180px;
+    }
+}
+
+@media (max-width: 1200px) {
+    .logo-container {
+        right: 50px;
+    }
+}
+
+.logo-small {
+    width: 60px; 
+}
+
+.redes-sociales img {
+    width: 30px; 
+    margin: 3px 20px; 
+}

@@ -1,0 +1,132 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<link rel="stylesheet" href="ESTILOS/style2.css">
+<title>Comprobante de Existencia</title>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/signature_pad/1.5.3/signature_pad.min.js"></script>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet">
+
+</head>
+<body>
+
+<section class="formulario">
+  <div class="titulo">
+    <h3>Comprobante de Existencia para registros con dispositivo externo</h3>
+    <h2>MASCOTAS Y ANIMALES DE COMPAÑIA</h2>
+  </div>
+  
+  <div class="seccion">
+        <h3>DATOS ANIMAL</h3>
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre">
+    
+        <label>Sexo:</label>
+        <select id="sexo" name="sexo">
+            <option value="macho">Macho</option>
+            <option value="hembra">Hembra</option>
+            <option value="esterilizado">Esterilizado</option>
+        </select>
+    
+        <label>Especie:</label>
+        <select id="especie" name="especie">
+            <option value="perro">Perro</option>
+            <option value="gato">Gato</option>
+        </select>
+    
+        <label for="raza">Raza:</label>
+        <input type="text" id="raza" name="raza">
+    
+        <label for="fecha_nacimiento">Fecha de nacimiento o aproximada:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento">
+    
+        <label>Origen:</label>
+        <select id="origen" name="origen">
+            <option value="nacimiento">Nacimiento</option>
+            <option value="rescate">Rescate</option>
+            <option value="adopcion">Adopción</option>
+            <option value="compra">Compra</option>
+        </select>
+    
+        <label>Motivo de tenencia:</label>
+        <select id="motivo_tenencia" name="motivo_tenencia">
+            <option value="compania">Compañía</option>
+            <option value="trabajo">Trabajo</option>
+            <option value="seguridad">Seguridad</option>
+            <option value="deporte">Deporte</option>
+            <option value="exposicion">Exposición</option>
+        </select>
+  </div>
+  
+  <div class="seccion">
+    <h3>DATOS MÉDICO VETERINARIO o TÉCNICO VETERINARIO</h3>
+    <label for="nombres">Nombres:</label>
+    <input type="text" id="nombres" name="nombres"><br><br>
+
+    <label for="apellidos">Apellidos:</label>
+    <input type="text" id="apellidos" name="apellidos"><br><br>
+
+    <label for="rut">Rut:</label>
+    <input type="text" id="rut" name="rut"><br><br>
+
+    <div class="radio-group">
+        <input type="radio" id="medicoVeterinario" name="profesion" value="medicoVeterinario">
+        <label for="medicoVeterinario">Médico Veterinario</label>
+    </div>
+    
+    <div class="radio-group">
+        <input type="radio" id="tecnicoVeterinario" name="profesion" value="tecnicoVeterinario">
+        <label for="tecnicoVeterinario">Técnico Veterinario</label>
+    </div>
+    
+    <label for="fecha">Fecha procedimiento:</label>
+    <input type="date" id="fecha" name="fecha"><br><br>
+
+
+    <label for="firma">Firma y Timbre:</label>
+    <canvas id="firmaCanvas" width="400" height="200"></canvas>
+
+    <div class="U"></div>
+        <button id="clearButton">Borrar</button>
+        <button id="saveButton">Guardar Firma</button>
+    </div>
+
+
+
+    <input type="submit" value="Enviar">
+    
+</section>
+
+<script>
+    // Inicializa Signature Pad en el canvas
+    var canvas = document.getElementById('firmaCanvas');
+    var signaturePad = new SignaturePad(canvas);
+
+    // Opcional: Configura el color y el grosor de la línea
+    signaturePad.penColor = 'black';
+    signaturePad.minWidth = 1;
+    signaturePad.maxWidth = 3;
+
+    // Opcional: Agrega botones para borrar y descargar la firma
+    var clearButton = document.getElementById('clearButton');
+    var saveButton = document.getElementById('saveButton');
+
+    clearButton.addEventListener('click', function () {
+        signaturePad.clear();
+    });
+
+    saveButton.addEventListener('click', function () {
+        if (signaturePad.isEmpty()) {
+            alert("Por favor, dibuja tu firma primero.");
+        } else {
+            var dataURL = signaturePad.toDataURL(); // Guarda la firma como una imagen en formato base64
+            // Aquí puedes procesar la firma, por ejemplo, enviarla a un servidor
+            console.log(dataURL);
+        }
+    });
+</script>
+
+</body>
+</html>

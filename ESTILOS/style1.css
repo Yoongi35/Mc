@@ -1,0 +1,81 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    background-image: url(/IMG/F1.jpeg);
+}
+
+h2 {
+    text-align: center;
+    margin-top: 20px;
+    color: #b93f06cb;
+}
+
+.contenido {
+    color: #794ca5;
+}
+
+form {
+    width: 80%;
+    margin: 100px auto;
+    background: linear-gradient(to right, rgb(255, 218, 185), rgb(173, 216, 230));
+    padding: 60px;
+    border-radius: 5px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="date"], textarea {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 15px;
+    border: 1px solid #1dd89a;
+    border-radius: 15px;
+}
+
+input[type="submit"] {
+    background-color: #8fd8cc;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    width: 100%;
+}
+
+input[type="submit"]:hover {
+    background-color: #0c0c27;
+}
+
+small {
+    display: block;
+    margin-top: 5px;
+    font-size: 0.8em;
+    color: #777;
+}
+
+@media (max-width: 600px) {
+    form {
+        width: 100%; 
+        padding: 30px;
+    }
+
+    input[type="text"], input[type="date"], textarea {
+        margin-bottom: 10px;
+    }
+
+    h2 {
+        margin-top: 15px;
+    }
+}
+
+
+@media (max-width: 900px) {
+    form {
+        width: 90%; 
+        padding: 40px; 
+    }
+
+    input[type="text"], input[type="date"], textarea {
+        padding: 8px; 
+    }
+}

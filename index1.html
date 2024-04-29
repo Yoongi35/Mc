@@ -1,0 +1,33 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="ESTILOS/style1.css">
+    <title>Formulario de Cédula de Identidad</title>
+</head>
+<body> 
+    <form action="/procesar_datos" method="post">
+        <h2>Ingrese los datos de su cédula de identidad</h2>
+            <div class="contenido">
+            <label for="nombre">Nombre:</label>
+            <input type="text" id="nombre" name="nombre" required><br><br>
+        
+            <label for="apellido">Apellido:</label>
+            <input type="text" id="apellido" name="apellido" required><br><br>
+        
+            <label for="cedula">Número de Cédula:</label>
+            <input type="text" id="cedula" name="cedula" pattern="[0-9]{7,8}" required>
+            <small>Formato: 7 u 8 dígitos numéricos</small><br><br>
+        
+            <label for="fecha_nacimiento">Fecha de Nacimiento:</label>
+            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br><br>
+        
+            <label for="direccion">Dirección:</label>
+            <textarea id="direccion" name="direccion" rows="4" cols="30" required></textarea><br><br>
+            </div>
+        
+        <input type="submit" value="Enviar">
+    </form>
+</body>
+</html>
